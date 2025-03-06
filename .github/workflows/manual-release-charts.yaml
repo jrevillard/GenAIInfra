@@ -88,6 +88,6 @@ jobs:
            echo "${{ secrets.ACTION_TOKEN }}" | helm registry login ghcr.io -u test --password-stdin
            for chart in *-${{ inputs.version }}.tgz; do
              echo "Publishing ${chart}"
-             helm push ${chart} oci://ghcr.io/opea-project/charts
+             helm push ${chart} oci://ghcr.io/jrevillard/opea-charts
            done
           fi
